@@ -11,8 +11,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.SnackbarResult
@@ -32,6 +30,8 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun StaticList(
+    isDarkTheme: Boolean,
+    onThemeChange: (Boolean) -> Unit,
     scope: CoroutineScope,
     snackbarHostState: SnackbarHostState,
     modifier: Modifier = Modifier
@@ -80,9 +80,10 @@ fun StaticList(
     LazyColumn(modifier = modifier) {
         items(items) { item ->
             Card(
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.tertiary,
-                ),modifier = Modifier
+//                colors = CardDefaults.cardColors(
+//                    containerColor = MaterialTheme.colorScheme.tertiary,
+//                ),
+                modifier = Modifier
                     .padding(8.dp)
                     .fillMaxWidth()
                     .combinedClickable(
@@ -141,8 +142,17 @@ fun StaticList(
                 ) {
                     Text("Add Items")
                 }
+                Spacer(modifier = Modifier.height(12.dp))
+                ThemeToggleButton(isDarkTheme, onThemeChange)
             }
         }
     }
 
+}
+
+@Composable
+fun ThemeToggleButton(isDarkTheme: Boolean, onThemeChange: (Boolean) -> Unit) {
+    Button(onClick = { onThemeChange(!isDarkTheme) }) {
+        Text(text = if (isDarkTheme) "Switch to Light Theme" else "Switch to Dark Theme")
+    }
 }
