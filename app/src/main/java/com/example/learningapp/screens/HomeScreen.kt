@@ -6,12 +6,14 @@ import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.learningapp.components.StaticList
 import kotlinx.coroutines.CoroutineScope
 
 
 @Composable
 fun HomeScreen(
+    navController: NavController,
     isDarkTheme: Boolean,
     onThemeChange: (Boolean) -> Unit,
     scope: CoroutineScope,
@@ -19,6 +21,7 @@ fun HomeScreen(
     modifier: Modifier = Modifier
 ) {
     StaticList(
+        navController = navController,
         isDarkTheme = isDarkTheme,
         onThemeChange = onThemeChange,
         scope = scope,

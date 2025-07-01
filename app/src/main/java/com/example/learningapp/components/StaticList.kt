@@ -24,12 +24,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun StaticList(
+    navController: NavController,
     isDarkTheme: Boolean,
     onThemeChange: (Boolean) -> Unit,
     scope: CoroutineScope,
@@ -46,7 +48,6 @@ fun StaticList(
         "Tulip"
     ) }
     val undoValue = remember { mutableStateOf("") }
-
 
 
     fun addItem(itemId: String = ""){
@@ -144,6 +145,18 @@ fun StaticList(
                 }
                 Spacer(modifier = Modifier.height(12.dp))
                 ThemeToggleButton(isDarkTheme, onThemeChange)
+                Spacer(modifier = Modifier.height(12.dp))
+                Button(onClick = {
+                    navController.navigate("counter_screen")
+                }) {
+                    Text(text = "Go to Counter Screen")
+                }
+                Spacer(modifier = Modifier.height(12.dp))
+                Button(onClick = {
+                    navController.navigate("user_screen")
+                }) {
+                    Text(text = "Go to User Screen")
+                }
             }
         }
     }
