@@ -16,14 +16,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.compose.LearningAppTheme
+import com.example.learningapp.screens.ContactsScreen
 import com.example.learningapp.screens.CounterScreen
 import com.example.learningapp.screens.HomeScreen
 import com.example.learningapp.screens.UserInputScreen
 
 @Composable
-fun App() {
-    var isDarkTheme by remember { mutableStateOf(false) }
-    LearningAppTheme(darkTheme = isDarkTheme) {
+fun App(isDarkTheme: Boolean,onThemeChange: (Boolean) -> Unit) {
         val scope = rememberCoroutineScope()
         val snackbarHostState = remember { SnackbarHostState() }
         Scaffold(
@@ -37,10 +36,8 @@ fun App() {
                 composable("home_screen") {
                     HomeScreen(
                         navController = navController,
-                        isDarkTheme = isDarkTheme,
-                        onThemeChange = { newThemeState -> // Pass the lambda to update it
-                            isDarkTheme = newThemeState
-                        },
+                        isDarkTheme = isDarkTheme,     // Pass the current state down
+                        onThemeChange = onThemeChange,
                         scope = scope,
                         snackbarHostState = snackbarHostState,
                         modifier = Modifier.padding(innerPadding)
@@ -52,8 +49,11 @@ fun App() {
                 composable("user_screen") {
                     UserInputScreen()
                 }
+                composable("contacts_screen") {
+                    ContactsScreen()
+                }
             })
 
         }
-    }
+
 }

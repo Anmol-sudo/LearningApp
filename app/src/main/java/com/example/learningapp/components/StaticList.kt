@@ -157,6 +157,13 @@ fun StaticList(
                 }) {
                     Text(text = "Go to User Screen")
                 }
+                Spacer(modifier = Modifier.height(12.dp))
+                Button(onClick = {
+                    navController.navigate("contacts_screen")
+                }) {
+                    Text(text = "Go to Contacts Screen")
+                }
+
             }
         }
     }

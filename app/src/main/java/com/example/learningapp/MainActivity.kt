@@ -7,7 +7,12 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.compose.LearningAppTheme
 
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
@@ -15,7 +20,15 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            App()
+            var isDarkTheme by remember { mutableStateOf(false) }
+            LearningAppTheme(darkTheme = isDarkTheme) {
+                App(
+                    isDarkTheme = isDarkTheme,
+                    onThemeChange = { newThemeState ->
+                        isDarkTheme = newThemeState
+                    }
+                )
+            }
         }
     }
 }
@@ -23,5 +36,13 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    App()
+    var isDarkTheme by remember { mutableStateOf(false) }
+    LearningAppTheme(darkTheme = isDarkTheme) {
+        App(
+            isDarkTheme = isDarkTheme,
+            onThemeChange = { newThemeState ->
+                isDarkTheme = newThemeState
+            }
+        )
+    }
 }

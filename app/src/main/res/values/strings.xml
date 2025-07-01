@@ -1,3 +1,43 @@
 <resources>
     <string name="app_name">LearningApp</string>
+
+    <!-- Contact 1 -->
+    <string name="contact_john_doe_name">John Doe</string>
+    <string name="contact_john_doe_number">123–456–7890</string>
+
+    <!-- Contact 2 -->
+    <string name="contact_jane_smith_name">Jane Smith</string>
+    <string name="contact_jane_smith_number">987–654–3210</string>
+
+    <!-- Contact 3 -->
+    <string name="contact_peter_jones_name">Peter Jones</string>
+    <string name="contact_peter_jones_number">555–111–2222</string>
+
+    <!-- Contact 4 -->
+    <string name="contact_mary_brown_name">Mary Brown</string>
+    <string name="contact_mary_brown_number">444–333–5555</string>
+
+    <!-- Contact 5 -->
+    <string name="contact_david_williams_name">David Williams</string>
+    <string name="contact_david_williams_number">999–888–7777</string>
+
+    <!-- Contact 6 -->
+    <string name="contact_linda_garcia_name">Linda Garcia</string>
+    <string name="contact_linda_garcia_number">111–222–3333</string>
+
+    <!-- Contact 7 -->
+    <string name="contact_michael_rodriguez_name">Michael Rodriguez</string>
+    <string name="contact_michael_rodriguez_number">777–666–5555</string>
+
+    <!-- Contact 8 -->
+    <string name="contact_patricia_martinez_name">Patricia Martinez</string>
+    <string name="contact_patricia_martinez_number">333–444–5555</string>
+
+    <!-- Contact 9 -->
+    <string name="contact_christopher_hernandez_name">Christopher Hernandez</string>
+    <string name="contact_christopher_hernandez_number">222–333–4444</string>
+
+    <!-- Contact 10 -->
+    <string name="contact_elizabeth_lopez_name">Elizabeth Lopez</string>
+    <string name="contact_elizabeth_lopez_number">888–999–0000</string>
 </resources>
