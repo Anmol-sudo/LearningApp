@@ -1,4 +1,4 @@
-package com.example.learningapp
+package com.example.learningapp.screens
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -17,7 +17,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun UserInput(){
+fun UserInputScreen(){
     var text = remember { mutableStateOf("") }
     var context = LocalContext.current
     Column(

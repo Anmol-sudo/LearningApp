@@ -1,4 +1,4 @@
-package com.example.learningapp
+package com.example.learningapp.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable

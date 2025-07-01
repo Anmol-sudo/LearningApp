@@ -1,4 +1,4 @@
-package com.example.learningapp
+package com.example.learningapp.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun Counter() {
+fun CounterScreen() {
     var count = remember { mutableIntStateOf(0) }
     Column(
         modifier = Modifier
